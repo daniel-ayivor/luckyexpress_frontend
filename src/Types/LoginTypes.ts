@@ -3,9 +3,11 @@ export type LoginTypes ={
     password:string;
 }
 export type SignUpTypes ={
-    username:string;
+    id:string,
+    name:string;
     email:string;
     password:string;
+    contact: string
 }
 
 export interface UserType {

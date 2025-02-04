@@ -1,6 +1,6 @@
 import ship from '../../../assets/pexels-thomas-parker-1272388137-26224664.jpg';
 import frieght from '../../../assets/A sturdy freight truck glides down the highway, loaded and ready to deliver essential goods_.jpg';
-import backgroundImg from "../../../assets/Evernote.jpg";
+// import backgroundImg from "../../../assets/Evernote.jpg";
 const Feature = () => {
     return (
         <div className="flex justify-center  items-center min-h-screen">
@@ -79,12 +79,7 @@ const Feature = () => {
  
     <div className="flex w-72 justify-center">
       <div
-        style={{
-            backgroundImage: `url(${backgroundImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
+      
       className="flex relative w-full max-w-full flex-col break-words rounded-lg border border-gray-100 bg-white text-gray-600 shadow-lg">
           {/* Dark Overlay */}
     <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
