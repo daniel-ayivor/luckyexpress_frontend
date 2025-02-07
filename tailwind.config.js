@@ -7,6 +7,9 @@ module.exports = {
 		maxWidth: {
 			"9xl": "100rem", // Custom size for extra-wide screens
 		  },
+		  backgroundImage: {
+			'cargo-bg': "url('/src/assets/pexels-soumya-ranjan-205042-1098745.jpg')",
+		  },
 	
   		borderRadius: {
   			lg: 'var(--radius)',

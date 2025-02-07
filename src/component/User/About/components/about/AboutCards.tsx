@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Ship, Truck, Package } from "lucide-react";
 import photo1 from '../../../../../assets/pexels-tomfisk-3856433.jpg'
 import photo2 from '../../../../../assets/markus-winkler-V0WETbEXG5Y-unsplash.jpg'
-import photo3 from '../../../../../assets/istockphoto-2192694829-612x612-removebg-preview.png'
 import photo4 from '../../../../../assets/elias-8QOpH6i3eQI-unsplash.jpg'
 const AboutCards = () => {
   const galleryItems = [
