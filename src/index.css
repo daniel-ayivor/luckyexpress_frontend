@@ -124,3 +124,8 @@ animation: fadeIn 0.5s ease-out forwards;
     @apply bg-background text-foreground;
   }
 }
+
+
+.contactImg {
+  background-image: url('./assets/logistics-means-transport-together-with-technological-futuristic-holograms (1).jpg');
+}

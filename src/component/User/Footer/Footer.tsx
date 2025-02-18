@@ -49,16 +49,16 @@ const Footer = () => {
           <h4 className="text-[#FFA726] font-semibold text-lg mb-6">Platforms</h4>
           <ul className="space-y-5">
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><MdFacebook />Facebook</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><MdFacebook />Facebook</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><MdWhatsapp />Whatsap</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><MdWhatsapp />Whatsap</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><IoLogoInstagram />Instagram</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><IoLogoInstagram />Instagram</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><IoLogoTwitter />Twitter</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all"><IoLogoTwitter />Twitter</a>
             </li>
           </ul>
         </div>
@@ -67,16 +67,16 @@ const Footer = () => {
           <h4 className="text-[#FFA726] font-semibold text-lg mb-6">Company</h4>
           <ul className="space-y-5">
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Accessibility</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Accessibility</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">About</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">About</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Contact</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Contact</a>
             </li>
             <li>
-              <a href="javascript:void(0)" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Learn more</a>
+              <a href="/contact" className="hover:text-[#FFA726] text-gray-300 text-[15px] transition-all">Learn more</a>
             </li>
           </ul>
         </div>
@@ -84,7 +84,7 @@ const Footer = () => {
 
       <div className="border-t text-center border-[#6b5f5f] pt-4 mt-8">
         <p className="text-gray-300 text-[15px]">
-          © ReadymadeUI. All rights reserved.
+          © LuckXpressCargo. All rights reserved.
         </p>
       </div>
     </footer>

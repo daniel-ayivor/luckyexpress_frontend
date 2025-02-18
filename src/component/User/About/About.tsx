@@ -7,11 +7,13 @@ import Story from "./components/about/Story"
 import Testimony from "./components/about/Testimony"
 
 
+
 const About = () => {
+
   return (
     <div>
    <Navbar />
-   <About_Us/>
+   <About_Us />
     <Stats />
  <Story />
  {/* <AboutCards /> */}

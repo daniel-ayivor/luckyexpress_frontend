@@ -19,10 +19,10 @@ const Contact = () => {
     <>
       <Navbar />
       <div className="relative mx-auto w-full bg-white">
-        <div className="grid min-h-screen grid-cols-10">
-          <div className="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
-            <div className="mx-auto w-full mt-12 max-w-lg">
-              <h1 className="relative text-2xl font-bold text-gray-700 sm:text-3xl"> Have a Shipment in Mind? <br /> Let’s Make It Happen!<span className="mt-2 block h-1 w-10 bg-gray-600 sm:w-20"></span></h1>
+        <div className="grid  min-h-screen grid-cols-10">
+          <div className="col-span-full  py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
+            <div className="mx-auto w-full shadow-2xl p-8 mt-12 max-w-md">
+              <h1 className="relative text-2xl font-bold text-gray-700 sm:text-xl"> Have a Shipment in Mind? <br /> Let’s Make It Happen!<span className="mt-2 block h-1 w-10 bg-gray-600 sm:w-20"></span></h1>
               <form onSubmit={handleSubmit} action="" className="mt-10 flex flex-col space-y-4">
                 <div><label className="text-xs font-semibold text-gray-500">Email</label><input type="email" id="email" name="email" placeholder="john.capler@fang.com" className="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500" />
                   <ValidationError
