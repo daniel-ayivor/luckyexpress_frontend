@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Truck, Package, MapPin, Users } from 'lucide-react';
 
 const stats = [
@@ -9,11 +9,11 @@ const stats = [
 ];
 
 const Stats = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsVisible(true);
+  // }, []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 py-12">

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaLightbulb, FaRegStar } from 'react-icons/fa';
 import { FaRegHandshake } from 'react-icons/fa6';
 import { PiTargetBold } from 'react-icons/pi';
