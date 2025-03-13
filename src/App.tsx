@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Corrected import
 import Login from './component/Auth/Login';
 import SignUp from './component/Auth/Signup';
-import { QueryClient } from "@tanstack/react-query";
+// import { QueryClient } from "@tanstack/react-query";
 import Index from './component/Admin/Index/Index';
 import Tracking from './component/User/Tracking/Tracking';
 
@@ -15,7 +15,7 @@ import Trackings from './component/Admin/Trackings/Trackings';
 
 
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
 function App() {
   return (
