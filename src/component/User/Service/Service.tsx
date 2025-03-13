@@ -1,7 +1,6 @@
-import { icons } from "lucide-react";
-import ServiceCard from "../About/components/services/ServiceCard";
+
 import ServiceGallery from "./ServiceGallery";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,  } from "framer-motion";
 import Services from "../About/components/services/Services";
 
 const Service = () => {

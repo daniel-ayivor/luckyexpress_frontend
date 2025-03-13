@@ -11,35 +11,35 @@ import { DataTable } from "../Dasboard/DataTable";
 import toast from "react-hot-toast";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { useUser } from "@/Constant/useUser";
+// import { useUser } from "@/Constant/useUser";
 import { groupBy } from "lodash";
 
 
-const areaData = [
-  { name: "Jan", value: 400 },
-  { name: "Feb", value: 300 },
-  { name: "Mar", value: 600 },
-  { name: "Apr", value: 800 },
-  { name: "May", value: 500 },
-  { name: "Jun", value: 900 },
-];
+// const areaData = [
+//   { name: "Jan", value: 400 },
+//   { name: "Feb", value: 300 },
+//   { name: "Mar", value: 600 },
+//   { name: "Apr", value: 800 },
+//   { name: "May", value: 500 },
+//   { name: "Jun", value: 900 },
+// ];
 
-const barData = [
-  { name: "Mon", value: 40 },
-  { name: "Tue", value: 30 },
-  { name: "Wed", value: 60 },
-  { name: "Thu", value: 80 },
-  { name: "Fri", value: 50 },
-  { name: "Sat", value: 90 },
-  { name: "Sun", value: 75 },
-];
+// const barData = [
+//   { name: "Mon", value: 40 },
+//   { name: "Tue", value: 30 },
+//   { name: "Wed", value: 60 },
+//   { name: "Thu", value: 80 },
+//   { name: "Fri", value: 50 },
+//   { name: "Sat", value: 90 },
+//   { name: "Sun", value: 75 },
+// ];
 
-type DataTableProps = {
-  data: any[];
-  columns: { key: string; label: string }[];
-  onEdit: (item: any) => void;
-  onDelete: (item: any) => void;
-};
+// type DataTableProps = {
+//   data: any[];
+//   columns: { key: string; label: string }[];
+//   onEdit: (item: any) => void;
+//   onDelete: (item: any) => void;
+// };
 
 type PackageType = {
   weight: number;
@@ -70,12 +70,13 @@ const tableColumns = [
 ];
 
 const Index = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const  [Submitting,setSubmitting] = useState(false)
-  const {access_token} =useUser()
+  // const {access_token} =useUser()
   const [Package, setPackage] = useState<PackageType[]>([]); 
 
   const [shipmentData, setShipmentData] = useState([]);
+  console.log(Submitting)
 
   useEffect(() => {
     fetch("http://localhost:5000/track/shipments") // Adjust URL to your endpoint

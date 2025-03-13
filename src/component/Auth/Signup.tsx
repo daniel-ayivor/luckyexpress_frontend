@@ -16,7 +16,6 @@ interface SignUpTypes {
 const SignUp = () => {
     const [isSubmitting, setSubmitting] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<SignUpTypes>();
-    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     const onSubmit: SubmitHandler<SignUpTypes> = async (data) => {

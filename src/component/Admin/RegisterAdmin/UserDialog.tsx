@@ -7,8 +7,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { BASE_URL } from "@/Constant/api";
-// import { SignUpTypes, UserType } from "@/Types/LoginTypes";
-import { ShipmentDetails } from "@/Types/TrackTypes";
+
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -22,11 +21,11 @@ export interface SignUpTypes {
 }
 export function UserDialog() {
 
-    const [shipmentDetail, setShipmentDetails] = useState<ShipmentDetails>()
+
 
     const [isSubmitting, setSubmitting] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<SignUpTypes>();
-    const [showPassword, setShowPassword] = useState(false);
+    
 
 
     const onSubmit: SubmitHandler<SignUpTypes> = async (data) => {

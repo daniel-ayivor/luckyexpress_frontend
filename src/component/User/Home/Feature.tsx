@@ -1,6 +1,6 @@
 import ship from '../../../assets/pexels-thomas-parker-1272388137-26224664.jpg';
 import frieght from '../../../assets/A sturdy freight truck glides down the highway, loaded and ready to deliver essential goods_.jpg';
-// import backgroundImg from "../../../assets/Evernote.jpg";
+
 const Feature = () => {
     return (
         <div className="flex justify-center  items-center min-h-screen">

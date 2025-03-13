@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import toast from 'react-hot-toast';
-import { FormspreeProvider, useForm, ValidationError } from '@formspree/react';
+
+import {  useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
   // Initialize state with empty strings

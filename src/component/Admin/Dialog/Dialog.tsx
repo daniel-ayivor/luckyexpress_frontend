@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { BASE_URL } from "@/Constant/api";
 import { ShipmentDetails } from "@/Types/TrackTypes";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -23,11 +24,11 @@ enum ShipmentStatus {
 
 export function DialogDemo() {
   const [selectedStatus, setSelectedStatus] = useState<ShipmentStatus>(ShipmentStatus.Pending);
-  const [shipmentDetail, setShipmentDetails] = useState<ShipmentDetails>()
+  // const [shipmentDetail, setShipmentDetails] = useState<ShipmentDetails>()
 
   const [isSubmitting, setSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<ShipmentDetails>();
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
 
   const onSubmit: SubmitHandler<ShipmentDetails> = async (data) => {
@@ -87,6 +88,7 @@ export function DialogDemo() {
                     })}
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.username?.message}
                 </div>
                 <div className="w-full">
                   <label className="text-sm text-neutral-700">Email</label>
@@ -103,6 +105,7 @@ export function DialogDemo() {
                     placeholder="Your Email"
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.email?.message}
                 </div>
               </div>
 
@@ -117,6 +120,7 @@ export function DialogDemo() {
                     placeholder="Your Contact"
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.contact?.message}
                 </div>
                 <div className="w-full">
                   <label className="text-sm text-neutral-700">Package Name</label>
@@ -128,6 +132,7 @@ export function DialogDemo() {
                     placeholder="Package Name"
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.packageName?.message}
                 </div>
               </div>
 
@@ -142,6 +147,7 @@ export function DialogDemo() {
                     placeholder="Package Type"
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.packageTypes?.message}
                 </div>
                 <div className="w-full">
                   <label className="text-sm text-neutral-700">Weight</label>
@@ -153,6 +159,7 @@ export function DialogDemo() {
                     })}
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.weight?.message}
                 </div>
               </div>
 
@@ -174,6 +181,7 @@ export function DialogDemo() {
                       </option>
                     ))}
                   </select>
+                  {errors.shipmentStatus?.message}
                 </div>
                 <div className="w-full">
                   <label className="text-sm text-neutral-700">Weight</label>
@@ -185,6 +193,7 @@ export function DialogDemo() {
                     })}
                     className="mt-2 h-10 w-full rounded-md bg-gray-100 px-3 text-xs"
                   />
+                  {errors.dimensions?.message}
                 </div>
               </div>
             </div>
@@ -192,7 +201,8 @@ export function DialogDemo() {
               type="submit"
               className="mt-4 w-full rounded-md bg-blue-600 py-2 text-sm font-semibold text-white hover:opacity-90"
             >
-              Add Package
+              
+              {isSubmitting ? <Loader2 /> : "Add Package"}
             </button>
           </form>
         </div>

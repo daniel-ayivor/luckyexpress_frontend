@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import cargoPlane from '../../../assets/port-de-barcelona-night.jpg'
-import cargoPlanes from '../../../assets/eric-ak-HPYbhe20_4U-unsplash.jpg'
 import cargoShip from '../../../assets/backgroundImg.jpg'
 import cargoShips from '../../../assets/pexels-rafael-quaty-37077235-17443885.jpg'
 const images = [

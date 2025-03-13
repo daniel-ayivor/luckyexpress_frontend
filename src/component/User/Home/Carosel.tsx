@@ -10,7 +10,7 @@ type ImageType = {
 export const ImageCarousel = ({images}:ImageType) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-
+console.log(isLoading)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);

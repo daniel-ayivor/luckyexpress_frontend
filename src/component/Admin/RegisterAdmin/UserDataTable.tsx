@@ -7,14 +7,14 @@ import {
     TableRow,
   } from "@/components/ui/table";
   import { Button } from "@/components/ui/button";
-  import { Edit2, Trash2 } from "lucide-react";
-  import { EditDialog } from "../Dialog/EditDialog";
-  import toast from "react-hot-toast";
-  import { ShipmentDetails } from "@/Types/TrackTypes";
-  import { BASE_URL } from "@/Constant/api";
-  import { SubmitHandler, useForm } from "react-hook-form";
-  import { useState } from "react";
-import { SignUpTypes, UserType } from "@/Types/LoginTypes";
+  import {  Trash2 } from "lucide-react";
+
+//   import toast from "react-hot-toast";
+//   import { ShipmentDetails } from "@/Types/TrackTypes";
+//   import { BASE_URL } from "@/Constant/api";
+//   // import { SubmitHandler, useForm } from "react-hook-form";
+//   import { useState } from "react";
+// import { SignUpTypes } from "@/Types/LoginTypes";
   
   type DataTableProps = {
     data: any[];
@@ -26,65 +26,65 @@ import { SignUpTypes, UserType } from "@/Types/LoginTypes";
 
   
   export function UserDataTable({ data, columns, onDelete }: DataTableProps) {
-    const [isSubmitting, setSubmitting] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm<ShipmentDetails>();
-  const [userDel , setUserDel]=useState<SignUpTypes[]>([])
-    const deleteUser = async (UserId: string) => {
-        setSubmitting(true);
-        try {
-          const token = localStorage.getItem("access_token");
-          console.log(token, "token from delete")
-          if (!token) {
-            toast.error("No access token found. Please login again.");
-            return;
-          }
+    // const [isSubmitting, setSubmitting] = useState(false);
+    // const {  formState: {  } } = useForm<ShipmentDetails>();
+  // const [userDel , setUserDel]=useState<SignUpTypes[]>([])
+    // const deleteUser = async (UserId: string) => {
+    //     setSubmitting(true);
+    //     try {
+    //       const token = localStorage.getItem("access_token");
+    //       console.log(token, "token from delete")
+    //       if (!token) {
+    //         toast.error("No access token found. Please login again.");
+    //         return;
+    //       }
     
-          const response = await fetch(`http://localhost:5000/auth/delete/${UserId}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          });
+    //       const response = await fetch(`http://localhost:5000/auth/delete/${UserId}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           Authorization: `Bearer ${token}`,
+    //         },
+    //       });
     
-          if (response.ok) {
-            toast.success("Package deleted successfully!");
-            setUserDel((prev) => prev.filter((pkg) => pkg.id !== UserId));
-          } else {
-            const result = await response.json();
-            toast.error(result.message || "Failed to delete package.");
-          }
-        } catch (error) {
-          console.error("Error deleting package:", error);
-          toast.error("Something went wrong. Please try again later.");
-        } finally {
-          setSubmitting(false);
-        }
-      };
+    //       if (response.ok) {
+    //         toast.success("Package deleted successfully!");
+    //         setUserDel((prev) => prev.filter((pkg) => pkg.id !== UserId));
+    //       } else {
+    //         const result = await response.json();
+    //         toast.error(result.message || "Failed to delete package.");
+    //       }
+    //     } catch (error) {
+    //       console.error("Error deleting package:", error);
+    //       toast.error("Something went wrong. Please try again later.");
+    //     } finally {
+    //       setSubmitting(false);
+    //     }
+    //   };
     
-    const onSubmit: SubmitHandler<ShipmentDetails> = async (data) => {
-      setSubmitting(true); // Start submission
-      try {
-        const response = await fetch(`${BASE_URL}/auth/register`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+    // const onSubmit: SubmitHandler<ShipmentDetails> = async (data) => {
+    //   setSubmitting(true); // Start submission
+    //   try {
+    //     const response = await fetch(`${BASE_URL}/auth/register`, {
+    //       method: "PUT",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(data),
+    //     });
   
-        const result = await response.json();
-        console.log(result);
-        if (response.ok) {
-          toast.success("Package updated successfully!");
-        } else {
-          toast.error(result.message || "Failed to update the package. Please try again.");
-        }
-      } catch (error: any) {
-        console.error("Error updating package:", error);
-        toast.error("Something went wrong. Please try again later.");
-      } finally {
-        setSubmitting(false);
-      }
-    };
+    //     const result = await response.json();
+    //     console.log(result);
+    //     if (response.ok) {
+    //       toast.success("Package updated successfully!");
+    //     } else {
+    //       toast.error(result.message || "Failed to update the package. Please try again.");
+    //     }
+    //   } catch (error: any) {
+    //     console.error("Error updating package:", error);
+    //     toast.error("Something went wrong. Please try again later.");
+    //   } finally {
+    //     setSubmitting(false);
+    //   }
+    // };
   
     return (
       <div className="rounded-md border">

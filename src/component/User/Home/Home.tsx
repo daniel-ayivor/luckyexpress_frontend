@@ -1,4 +1,4 @@
-import About from "../About/About"
+
 import AboutCards from "../About/components/about/AboutCards"
 import Story from "../About/components/about/Story"
 import Footer from "../Footer/Footer"

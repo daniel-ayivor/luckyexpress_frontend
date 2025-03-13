@@ -7,13 +7,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Edit2, Trash2 } from "lucide-react";
+import {  Trash2 } from "lucide-react";
 import { EditDialog } from "../Dialog/EditDialog";
 import toast from "react-hot-toast";
-import { ShipmentDetails } from "@/Types/TrackTypes";
-import { BASE_URL } from "@/Constant/api";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
+// import { ShipmentDetails } from "@/Types/TrackTypes";
+// import { BASE_URL } from "@/Constant/api";
+// import { SubmitHandler, useForm } from "react-hook-form";
+// import { useEffect, useState } from "react";
 
 type DataTableProps = {
   data: any[];
@@ -22,44 +22,44 @@ type DataTableProps = {
   onDelete: (item: any) => void;
 };
 
-enum ShipmentStatus {
-  Pending = "Pending",
-  Shipped = "Shipped",
-  InTransit = "In Transit",
-  Delivered = "Delivered",
-  Cancelled = "Cancelled",
-}
+// enum ShipmentStatus {
+//   Pending = "Pending",
+//   Shipped = "Shipped",
+//   InTransit = "In Transit",
+//   Delivered = "Delivered",
+//   Cancelled = "Cancelled",
+// }
 
 export function DataTable({ data, columns, onEdit, onDelete }: DataTableProps) {
-  const [isSubmitting, setSubmitting] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm<ShipmentDetails>();
-  const [selectedStatus, setSelectedStatus] = useState<ShipmentStatus>(ShipmentStatus.Pending);
+  // const [isSubmitting, setSubmitting] = useState(false);
+  // // const { register, handleSubmit, formState: { errors } } = useForm<ShipmentDetails>();
+  // // const [selectedStatus, setSelectedStatus] = useState<ShipmentStatus>(ShipmentStatus.Pending);
 
-  const onSubmit: SubmitHandler<ShipmentDetails> = async (data) => {
-    const packageId = localStorage.getItem("packageId");
-    console.log(packageId, "packageId");
-    setSubmitting(true); // Start submission
-    try {
-      const response = await fetch(`${BASE_URL}/track/shipments/${packageId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+  // const onSubmit: SubmitHandler<ShipmentDetails> = async (data) => {
+  //   const packageId = localStorage.getItem("packageId");
+  //   console.log(packageId, "packageId");
+  //   setSubmitting(true); // Start submission
+  //   try {
+  //     const response = await fetch(`${BASE_URL}/track/shipments/${packageId}`, {
+  //       method: "PUT",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(data),
+  //     });
 
-      const result = await response.json();
-      console.log(result);
-      if (response.ok) {
-        toast.success("Package updated successfully!");
-      } else {
-        toast.error(result.message || "Failed to update the package. Please try again.");
-      }
-    } catch (error: any) {
-      console.error("Error updating package:", error);
-      toast.error("Something went wrong. Please try again later.");
-    } finally {
-      setSubmitting(false); // End submission
-    }
-  };
+  //     const result = await response.json();
+  //     console.log(result);
+  //     if (response.ok) {
+  //       toast.success("Package updated successfully!");
+  //     } else {
+  //       toast.error(result.message || "Failed to update the package. Please try again.");
+  //     }
+  //   } catch (error: any) {
+  //     console.error("Error updating package:", error);
+  //     toast.error("Something went wrong. Please try again later.");
+  //   } finally {
+  //     setSubmitting(false); // End submission
+  //   }
+  // };
 
   return (
     <div className="rounded-md border">

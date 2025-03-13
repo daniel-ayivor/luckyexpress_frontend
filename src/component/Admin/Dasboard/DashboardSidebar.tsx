@@ -4,7 +4,6 @@ import {
   LayoutDashboard,
   LogOut,
   MonitorCheck,
-  Settings,
   Users,
 } from "lucide-react";
 import {

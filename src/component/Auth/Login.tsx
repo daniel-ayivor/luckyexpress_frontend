@@ -8,7 +8,7 @@ import bckgroundImg from '../../assets/pexels-kelly-1179532-12530458.jpg';
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<LoginTypes>();
   const [showPassword, setShowPassword] = useState(false);
 const navigate= useNavigate()
@@ -121,7 +121,7 @@ const navigate= useNavigate()
             <form onSubmit={handleSubmit(handleLogin)} className="mb-4">
               <div className="mb-2">
                 <label className="mb-2 inline-block text-xs font-medium text-gray-100">
-                  User name
+                  User email
                 </label>
                 <div className="relative">
                   <input
@@ -129,9 +129,10 @@ const navigate= useNavigate()
                     className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg-transparent py-2 px-3 pl-10 text-sm outline-none focus:border-indigo-500 focus:text-gray-200 focus:shadow"
                     id="email"
                     {...register("email", { required: "Email is required" })}
-                    placeholder="Enter your username"
+                    placeholder="Enter your email"
                     autoFocus
                   />
+                  {errors.email?.message}
                   {/* Envelope Icon */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 h-3 w-3 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 12l-10 6-10-6" />
@@ -156,7 +157,7 @@ const navigate= useNavigate()
                     {...register("password", { required: "Password is required" })}
                     className="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg-transparent py-2 pl-10 px-3 text-sm outline-none focus:border-indigo-500 focus:text-gray-200 focus:shadow"
                   />
-
+                {errors.password?.message}
                   {/* Lock Icon */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 17a4 4 0 004-4V7a4 4 0 10-8 0v6a4 4 0 004 4z" />

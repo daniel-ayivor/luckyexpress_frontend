@@ -9,7 +9,7 @@ import { Navbar } from "../Dasboard/Navbar";
 import { groupBy } from "lodash";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 type PackageType = {
   weight: number;
   id: number;
@@ -27,8 +27,8 @@ type PackageType = {
 
 
 const Analytics = () => {
-  const [Package, setPackage] = useState<PackageType[]>([]); 
-  const [Submitting, setSubmitting] = useState(false);
+  // const [Package, setPackage] = useState<PackageType[]>([]); 
+  // const [Submitting, setSubmitting] = useState(false);
   const [shipmentData, setShipmentData] = useState<PackageType[]>([]);
 
   useEffect(() => {
@@ -61,13 +61,13 @@ const Analytics = () => {
   const areaChartData = getMonthlyData(shipmentData);
   const barChartData = getMonthlyCounts(shipmentData);
 
-  const getWeeklyData = (data: PackageType[]) => {
-    const grouped = groupBy(data, (item) => moment(item.createdAt).startOf('week').format("YYYY-MM-DD"));
-    return Object.entries(grouped).map(([weekStart, items]) => ({
-      name: `Week of ${moment(weekStart).format("MMM Do")}`,
-      value: items.reduce((total, item) => total + item.weight, 0), // Sum weights for the week
-    }));
-  };
+  // const getWeeklyData = (data: PackageType[]) => {
+  //   const grouped = groupBy(data, (item) => moment(item.createdAt).startOf('week').format("YYYY-MM-DD"));
+  //   return Object.entries(grouped).map(([weekStart, items]) => ({
+  //     name: `Week of ${moment(weekStart).format("MMM Do")}`,
+  //     value: items.reduce((total, item) => total + item.weight, 0), // Sum weights for the week
+  //   }));
+  // };
   
   const getWeeklyCounts = (data: PackageType[]) => {
     const grouped = groupBy(data, (item) => moment(item.createdAt).startOf('week').format("YYYY-MM-DD"));

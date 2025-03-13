@@ -1,11 +1,10 @@
 
-import { useEffect, useState } from 'react';
+
 import missionImg from '../../../assets/WhatsApp Image 2025-02-17 at 7.06.32 AM.jpeg'
 
 
 const About_Us = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+
 
 
   return (

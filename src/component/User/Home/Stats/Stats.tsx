@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Folder, Users, MapPin, Smile } from "lucide-react"; // Import icons
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 interface StatProps {
   value: number;
   label: string;

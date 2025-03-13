@@ -5,16 +5,10 @@ import { DataTable } from "../Dasboard/DataTable"
 import { Card } from "../Dasboard/Card"
 import { useEffect, useState } from "react"
 import { IoFilter } from "react-icons/io5";
-import { useUser } from "@/Constant/useUser"
 import toast from "react-hot-toast"
 import moment from "moment"
 import { DialogDemo } from "../Dialog/Dialog"
-type DataTableProps = {
-  data: any[];
-  columns: { key: string; label: string }[];
-  onEdit: (item: any) => void;
-  onDelete: (item: any) => void;
-};
+
 
 type PackageType = {
   weight: number;
@@ -50,6 +44,7 @@ const Trackings = () => {
   const [packages, setPackages] = useState<PackageType[]>([]);
   const [editingPackage, setEditingPackage] = useState<PackageType | null>(null);
 
+  console.log(submitting, " ", editingPackage)
   // Fetch Packages
   const fetchPackages = async () => {
     setSubmitting(true);
@@ -126,48 +121,48 @@ const Trackings = () => {
     }
   };
 
-  // Handle Update Package
-  const updatePackage = async (updatedPackage: PackageType) => {
-    setSubmitting(true);
-    try {
-      const token = localStorage.getItem("access_token");
-      if (!token) {
-        toast.error("No access token found. Please login again.");
-        return;
-      }
+  // // Handle Update Package
+  // const updatePackage = async (updatedPackage: PackageType) => {
+  //   setSubmitting(true);
+  //   try {
+  //     const token = localStorage.getItem("access_token");
+  //     if (!token) {
+  //       toast.error("No access token found. Please login again.");
+  //       return;
+  //     }
 
-      const response = await fetch(`http://localhost:5000/track/shipments/${updatedPackage.trackingCode}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(updatedPackage),
-      });
+  //     const response = await fetch(`http://localhost:5000/track/shipments/${updatedPackage.trackingCode}`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //       body: JSON.stringify(updatedPackage),
+  //     });
 
-      const result = await response.json();
-      if (response.ok) {
-        toast.success("Package updated successfully!");
-        setPackages((prev) =>
-          prev.map((pkg) =>
-            pkg.trackingCode === updatedPackage.trackingCode ? { ...pkg, ...updatedPackage } : pkg
-          )
-        );
-        setEditingPackage(null); // Close the editing form
-      } else {
-        toast.error(result.message || "Failed to update package.");
-      }
-    } catch (error) {
-      console.error("Error updating package:", error);
-      toast.error("Something went wrong. Please try again later.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  //     const result = await response.json();
+  //     if (response.ok) {
+  //       toast.success("Package updated successfully!");
+  //       setPackages((prev) =>
+  //         prev.map((pkg) =>
+  //           pkg.trackingCode === updatedPackage.trackingCode ? { ...pkg, ...updatedPackage } : pkg
+  //         )
+  //       );
+  //       setEditingPackage(null); // Close the editing form
+  //     } else {
+  //       toast.error(result.message || "Failed to update package.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating package:", error);
+  //     toast.error("Something went wrong. Please try again later.");
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
 
   // Dropdown Handlers
   const toggleDropdown = () => setIsOpen((prev) => !prev);
-  const closeDropdown = () => setIsOpen(false);
+  // const closeDropdown = () => setIsOpen(false);
 
   return (
     <SidebarProvider>

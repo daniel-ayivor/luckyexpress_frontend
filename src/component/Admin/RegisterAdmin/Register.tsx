@@ -26,7 +26,7 @@ const tableColumns = [
 const Register = () => {
     const [users, setUsers] = useState<UserType[]>([]);
     const [isSubmitting, setSubmitting] = useState(false);
-
+console.log(isSubmitting)
     const fetchUsers = async () => {
         setSubmitting(true);
         try {

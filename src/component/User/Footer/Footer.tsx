@@ -1,4 +1,4 @@
-import { GiBirdTwitter } from "react-icons/gi"
+
 import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io5"
 import { MdFacebook, MdWhatsapp } from "react-icons/md"
 
